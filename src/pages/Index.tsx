@@ -135,12 +135,12 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-r from-statusnow-purple/20 to-statusnow-purple-light/20 rounded-3xl blur-3xl"></div>
                 
                 <img 
-                  src="public\image.png" 
+                  src="/image.png" 
                   alt="Startup founders collaborating" 
                   className="rounded-3xl bg-white w-full h-auto object-cover relative z-10 border border-white/10"
                 />
                 <img 
-                  src="public\logo.png" 
+                  src="/logo.png" 
                   alt="Startup founders collaborating" 
                   className="rounded-3xl bg-white w-full h-auto object-cover relative z-10 border border-white/10"
                 />
@@ -248,7 +248,7 @@ export default function Index() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-statusnow-purple/20 to-statusnow-purple-light/20 rounded-3xl blur-3xl"></div>
                 <img 
-                  src="public\d2eau0ubdmvhgpxd7qfj.png" 
+                  src="/d2eau0ubdmvhgpxd7qfj.png" 
                   alt="Startup community" 
                   className="rounded-3xl w-full h-auto object-cover relative z-10 border border-white/10"
                 />
