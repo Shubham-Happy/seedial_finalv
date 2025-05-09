@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 47 43% 96%; /* Cream background */
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 47 43% 98%; /* Cream card */
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 47 43% 98%; /* Cream popover */
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 260 84% 67%; /* Purple as primary #8B5CF6 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 142 70% 45%; /* Green as secondary #16A34A */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 47 30% 90%; /* Muted cream */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 260 84% 87%; /* Light purple accent */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 47 30% 85%; /* Cream border */
+    --input: 47 30% 85%;
+    --ring: 260 84% 67%; /* Purple ring */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 47 30% 94%; /* Cream sidebar */
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 260 84% 67%; /* Purple sidebar primary */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 47 20% 90%; /* Cream sidebar accent */
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 47 20% 85%; /* Cream sidebar border */
+    --sidebar-ring: 260 84% 67%; /* Purple sidebar ring */
+  }
+
+  .dark {
+    --background: 222 14% 14%; /* Dark background */
+    --foreground: 210 40% 98%;
+
+    --card: 222 14% 12%; /* Slightly darker than background */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 14% 14%; /* Dark background */
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 260 84% 67%; /* Purple as primary */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 142 70% 40%; /* Green as secondary */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 14% 24%;
+    --muted-foreground: 215 20.2% 75%;
+
+    --accent: 260 84% 40%; /* Dark purple accent */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 14% 22%;
+    --input: 222 14% 22%;
+    --ring: 260 84% 60%; /* Purple ring in dark mode */
+
+    --sidebar-background: 222 14% 16%; /* Dark with slight variation */
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 260 84% 60%; /* Purple sidebar primary */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 14% 20%; /* Slightly lighter than background */
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 222 14% 20%;
+    --sidebar-ring: 260 84% 60%; /* Purple sidebar ring */
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .pulse {
+    @apply animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+  }
+  
+  /* Mobile-friendly utility classes */
+  .safe-top {
+    @apply pt-safe;
+  }
+  
+  .safe-bottom {
+    @apply pb-safe;
+  }
+  
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  .no-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .mobile-card {
+    @apply rounded-xl shadow-sm border;
+  }
+  
+  /* Improved mobile scrolling */
+  .smooth-scroll {
+    @apply scroll-smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply smooth-scroll;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Better touch interactions */
+  button, a {
+    @apply no-tap-highlight;
+  }
+  
+  /* Improve mobile forms */
+  input, select, textarea {
+    @apply text-base; /* iOS zooms when text is < 16px */
+  }
+  
+  /* Fix viewport issues on iOS */
+  @supports (-webkit-touch-callout: none) {
+    .min-h-screen {
+      min-height: -webkit-fill-available;
+    }
+  }
+}
+
+
